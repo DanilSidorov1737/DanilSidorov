@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+Number 1: <input type="" name="" id="num1"><br>
+Number 2: <input type="" name="" id="num2"><br>
+<br>
+Answer: <span id="result"></span>
+<br>
+<button id="btn"> + </button>
+<button id="btn2"> - </button>
+<button id="btn3"> * </button>
+<button id="btn4"> / </button>
+<script type="text/javascript">
+	btn.onclick = function(){
+		result.innerHTML = parseInt(num1.value) + parseInt(num2.value)
+	}
+	btn2.onclick = function(){
+		result.innerHTML = parseInt(num1.value) - parseInt(num2.value)
+	}
+	btn3.onclick = function(){
+		result.innerHTML = parseInt(num1.value) * parseInt(num2.value)
+	}
+	btn4.onclick = function(){
+		result.innerHTML = parseInt(num1.value) / parseInt(num2.value)
+	}
+</script>
+</body>
+</html>

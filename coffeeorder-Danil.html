@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coffee Order</title>
+	<style type="text/css">
+		#order{
+			text-align: center;
+			font-size: 30px;
+		}
+		body{
+			background-image: linear-gradient(to right, red, yellow);
+		}
+
+		#title{
+			font-size:45px;
+			color: cyan;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+<center><h1 id="title">Coffee Order</h1></center>
+
+<div id="order">
+
+Type of Coffee:<br>
+<input type="checkbox" name="" id="hazelnut"> Hazelnut <br>
+<input type="checkbox" name="" id="vanilla"> Vanilla <br>
+<input type="checkbox" name="" id="black"> Black <br>
+<input type="checkbox" name="" id="decaf"> Decaft <br>
+
+<br>
+
+Size<br>
+<select id="size">
+	
+<option>8oz</option>
+<option>16oz</option>
+<option>24oz</option>
+
+</select>
+<br>
+<br>
+Add Ons: <br>
+<input type="radio" name="" id="sweetner"> Sweetner <br>
+<input type="radio" name="" id="dairy"> Dairy <br>
+<br>
+<br>
+<button id="btn">Submit</button>
+<p id="result"></p>
+
+</div>
+
+<script 
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous">	
+</script>
+
+
+<script type="text/javascript">
+	$("#result").html("")
+	Type = ""
+
+	$("#btn").on("click", function(){
+
+	$("#result").html("")
+	Type = ""
+	Size = ""
+	AddOns = ""
+
+	if($("#hazelnut").is(":checked")){
+		Type += "Type of Coffee selected is hazelnut"	
+
+	}
+	if($("#vanilla").is (":checked")){
+		Type += "Type of Coffee selected is vanilla"
+	}
+	if($("#black").is (":checked")){
+		Type += "Type of Coffee selected is black"
+	}
+	if($("#decaf").is (":checked")){
+		Type += "Type of Coffee selected is decaf"
+	}
+
+
+	$("#result").append(Type)
+
+	if($("#sweetner").is(":checked")){
+		AddOns = "Sweetner"
+	}
+
+	if($("#dairy").is(":checked")){
+		AddOns = "Dairy"
+	}
+
+	$("#result").append("<br> Add On selected is " + AddOns)
+
+	Size = $("#size").val()
+	$("#result").append("<br> Size selected is " + Size) 
+	})
+
+
+</script>
+
+
+
+
+
+</body>
+</html>                                                   

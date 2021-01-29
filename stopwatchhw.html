@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stop Watch</title>
+		<style type="text/css">
+			body{
+				background-color: oldlace;
+				font-family: "comic sans ms";
+				color: maroon;
+			}
+			#start{
+			background-color: #4CAF50;
+  			border: none;
+  			color: white;
+  			padding: 20px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+  			margin: 4px 2px;
+  			border-radius: 10px;
+			}
+			#reset{
+			background-color: #4CAF50;
+  			border: none;
+  			color: white;
+  			padding: 20px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+  			margin: 4px 2px;
+  			border-radius: 10px;
+			}
+			#box{
+			width: 30%;
+			margin: 0 auto;
+			padding: 30px;
+			border-radius: 30px;
+			text-align: center;
+			border: 1px solid maroon;
+			font-size: 25px;
+			}
+		</style>
+
+</head>
+<body>
+<div id = "box">
+	<h1>Stop Watch 2</h1>
+	<h2 id="stop_watch"></h2>
+	<br>
+	<button id="start">Start</button>
+	<button id="reset">Reset</button>
+</div>
+
+	<script type="text/javascript">
+		time = 0
+		flag = true
+
+		go = function(){
+			time = time + 1
+			stop_watch.innerHTML = time
+
+		}
+
+		start.onclick = function(){
+			if(flag == true){
+				start_timer = setInterval(go, 1000)
+				start.innerHTML = "Stop"
+				flag = false
+			}else{	
+				start.innerHTML = "Start"
+				clearInterval(start_timer)
+				flag = true
+
+			}
+		}
+
+		reset.onclick = function(){
+			clearInterval(start_timer)
+			flag = true
+			time = 0
+			stop_watch.innerHTML = time
+		}
+
+
+
+	</script>
+
+</body>
+</html>

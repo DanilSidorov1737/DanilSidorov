@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Exercise</title>
+	<style type="text/css">
+
+		
+
+		body{
+			background: oldlace;
+			color:maroon;
+			background-image: url(https://i.pinimg.com/originals/9f/93/95/9f9395d3a6950aa135535bddfbdc27a0.png);
+			
+		}
+
+
+		input{
+			margin-bottom: 10px;
+						
+
+
+		}
+		li{
+			margin-bottom: 20px;
+			margin-right: 5px;
+			
+		}
+		ul .item{
+			font-size: 20px;
+			margin-right: 5px;
+
+
+			
+		}
+		button{
+			cursor: pointer;
+		}
+		.btn{
+			background:red;
+			margin-left: 5px;
+			margin-right: 5px;
+
+		}
+		#todo-list{
+			font-size: 30px;
+			margin-left: 10px;
+			margin-right: 5px;
+
+			
+		}
+		#input-item{
+			font-size: 20px;
+		}
+		#add{
+			height: 30px;
+			width:30px;
+		}
+		.in{
+			margin-left: 5px;
+			height:20px;
+					
+		}
+
+		
+
+
+		
+		
+
+
+	</style>
+
+</head>
+
+<body>
+
+
+	
+	
+	<center><h1>Birthday Party Invites</h1></center>
+<center>
+	<div>
+
+		<input type="text" name="" id="input-item">
+
+		<button id="add"> + </button>
+		<br>
+		<h3>Put Email or Phone in Box</h3>
+
+	</div>
+
+	<div>
+		
+		<l id="todo-list"></l>
+		
+		
+		
+
+	</div></center>
+
+	<script type="text/javascript">
+			
+		var inputItem = document.getElementById("input-item")
+		var addBtn = document.getElementById("add")
+		var todoList = document.getElementById("todo-list")
+		
+		var email 
+		var anLi
+		var deleteBtn
+		var send
+
+		addBtn.onclick = function(){
+			anLi = document.createElement("li")
+			todoList.appendChild(anLi)
+			anLi.innerHTML = inputItem.value
+			anLi.classList.add("item")
+
+			var email = document.createElement("input")
+			email.innerHTML = "Email"
+			anLi.appendChild(email)
+			email.classList.add("in")
+
+
+			var deleteBtn = document.createElement("button")
+			deleteBtn.innerHTML = "X"
+			anLi.appendChild(deleteBtn)
+			deleteBtn.classList.add("btn")
+
+			var send = document.createElement("button")
+			send.innerHTML = "Send"
+			anLi.appendChild(send)
+			send.classList.add("button")
+
+
+		}
+
+		todoList.onclick = function(e){
+			if(e.target.className == "btn"){
+				todoList.removeChild(e.target.parentNode)
+			}
+		}
+
+		todoList.onclick = function(e){
+			if(e.target.className == "button"){
+				alert("Invitation is Sent!")
+			}
+		}
+
+
+
+
+
+
+	
+
+
+
+
+
+	</script>
+
+
+
+</body>
+
+
+</html>

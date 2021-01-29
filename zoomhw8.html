@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag & Recycle</title>
+	<style type="text/css">
+		img{
+			max-width: 200px;
+			max-height: 200px;
+		}
+
+
+	</style>
+
+
+</head>
+
+
+<body>
+
+	<h1>Learn To Recycle</h1>
+
+		<img id="recyclebin" data-recycle = "yes" src="https://www.groovypost.com/wp-content/uploads/2013/02/Recycle-Bin.png">
+
+		<img id="garbagecan" data-recycle = "no" src="https://images.globalindustrial.com/images/1500x1500/240464GY.jpg">
+
+		<img id="biocan" data-recycle="no" src="https://images-na.ssl-images-amazon.com/images/I/41hr-IRkjaL._SX342_.jpg">
+
+		<img id="needle" data-recycle="hi" src="https://www.valleyvet.com/swatches/42021_L_vvs_000.jpg">
+
+		<img id="gloves" data-recycle="hi" src="https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/752367">
+
+		<img id="bottle" data-recycle = "yes"  src="https://recollect-images.global.ssl.fastly.net/api/image/500/material.default.plastic_beverage_bottles.svg" draggable="true">
+
+		<img id="trash" data-recycle = "no" src="https://www.vippng.com/png/full/65-653335_gl-hd-trash-bags.png" draggable="true">
+
+		<img id="food" data-recycle="no" src="https://www.recyclebycity.com/thumb/192/192/transparent,minify/food_scraps.png" draggable>
+
+		<img id="newspaper" data-recycle = "yes" src="https://img-aws.ehowcdn.com/750x428p/photos.demandstudios.com/getty/article/129/67/78460437.jpg" draggable="true">
+
+
+
+
+		<fieldset>
+			
+			<legend>Recycled Items</legend>
+			<ol id="rlist"></ol>
+
+		</fieldset>
+
+		<fieldset>
+			
+			<legend>Garbage Items</legend>
+			<ol id="glist"></ol>
+
+		</fieldset>
+
+		<fieldset>
+			
+			<legend>Hazard Items</legend>
+			<ol id="hlist"></ol>
+
+		</fieldset>
+
+
+
+
+	<script type="text/javascript">
+			var recyclebin = document.getElementById("recyclebin");
+			var garbagecan = document.getElementById("garbagecan");
+			var biocan = document.getElementById("biocan");
+			var hlist = document.getElementById("hlist");
+			var rlist = document.getElementById("rlist");
+			var glist = document.getElementById("glist");
+
+			this.ondragstart = function dragstart(e){
+				e.dataTransfer.setData("Text", e.target.id);
+
+			}
+
+			this.ondragover = function dragover(e){
+				e.preventDefault();
+
+			}
+
+			recyclebin.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "yes"){
+					rlist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+
+				
+				}
+			}
+
+			garbagecan.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "no"){
+					glist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+
+				
+				}
+			}
+
+			biocan.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "hi"){
+					hlist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+
+				
+				}
+			}
+
+			recyclebin.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "yes"){
+					rlist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+					var msg = new SpeechSynthesisUtterance("Correct. " + data + " go into the recycle bin")
+					speechSynthesis.speak(msg)
+
+			
+				}else{
+					var msg = new SpeechSynthesisUtterance("Wrong. " + data + " does not go into the recycle bin")
+					speechSynthesis.speak(msg)
+				}
+	
+			}
+				
+
+			garbagecan.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "no"){
+					glist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+					var msg = new SpeechSynthesisUtterance("Correct. " + data + " go into the trash bin")
+					speechSynthesis.speak(msg)
+
+			
+				}else{
+					var msg = new SpeechSynthesisUtterance("Wrong. " + data + " does not go into the trash bin")
+					speechSynthesis.speak(msg)
+				}
+	
+			}
+
+			biocan.ondrop = function drop(e){
+				e.preventDefault();
+				var data = e.dataTransfer.getData("Text");
+				var dropdata = document.getElementById(data);
+
+				if(dropdata.getAttribute("data-recycle") == "hi"){
+					hlist.innerHTML += "<li>" + data + "</li>";
+					dropdata.parentNode.removeChild(dropdata);
+					var msg = new SpeechSynthesisUtterance("Correct. " + data + " go into the bio bin")
+					speechSynthesis.speak(msg)
+
+			
+				}else{
+					var msg = new SpeechSynthesisUtterance("Wrong. " + data + " does not go into the bio bin")
+					speechSynthesis.speak(msg)
+				}
+	
+			}
+
+
+
+			
+
+
+
+
+	</script>
+
+
+
+</body>
+
+
+</html>

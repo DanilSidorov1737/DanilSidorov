@@ -1,0 +1,106 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+
+	<style type="text/css">
+		body{
+			background-color: oldlace;
+			font-family: "comic sans ms";
+			color: maroon;
+		}
+		h1{
+			color:red;
+		}
+		button{
+			width: 100px;
+			height: 100px;
+			font-size: 18px;
+			background-color: maroon;
+			color: oldlace;
+		}
+		#form{
+			width: 40%;
+			margin: 0 auto;
+			border: 1px solid maroon;
+			padding: 30px;
+			border-radius: 30px;
+
+			
+
+		}
+		
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+<div id="form">
+	<center><h1>Registration Form</h1></center>
+	Name:<br>
+	<input type="text" name="" id="n" size=50><br>
+	<br>
+	Email:<br>
+	<input type="email" name="" id="email" size=50><br>
+	<br>
+	Date of Birth:<br>
+	<input type="date" name="" id="d" size=50><br>
+	<br>
+	Gender:<br>
+	<input type="radio" name="gender" id="male"> Male<br>
+	<input type="radio" name="gender" id="female"> Female<br>
+	<br>
+	Hobby:<br>
+	<select id="hobby">
+		<option>Chess</option>
+		<option>Baseball</option>
+		<option>Football</option>
+	</select>
+
+	<br>
+	<br>
+	<button id="btn">Submit</button>
+
+	
+	<p id="result"></p>
+
+
+</div>
+
+<script type="text/javascript">
+	btn.onclick = function(){
+		username = n.value
+		useremail = email.value
+		dob = d.value
+		gender = ""
+		if(male.checked == true){
+			gender = "Male"
+		}
+		if(female.checked == true){
+			gender = "Female"
+		}
+
+
+		console.log(username)
+		console.log(gender)
+
+		result.innerHTML = "Thanks, " + username + "<br>"
+		+ "You have been registered. <br>"
+		+ "Name: " + username + "<br>"
+		+ "Email: " + useremail + "<br>"
+		+ "DOB: " + dob + "<br>"
+		+ "Gender: " + gender + "<br>"
+	}
+
+
+</script>
+
+
+
+</body>
+</html>

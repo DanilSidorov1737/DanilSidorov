@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZOOM HW 4</title>
+	<style type="text/css">
+		
+		#coin{
+			width:175px;
+			height:150px;
+			border:1px solid black;
+			background-color: #DFDFDF;
+			border-radius: 15%;
+			text-align: center;
+			padding-top:50px;
+			font-size: 50px;
+		}
+		#btn{
+			height: 30px;
+			width:100px;
+			background-color: cyan;
+
+		}
+
+		#coin1{
+			width:175px;
+			height:150px;
+			border:1px solid black;
+			background-color: #DFDFDF;
+			border-radius: 15%;
+			text-align: center;
+			padding-top:50px;
+			font-size: 50px;
+			
+		}
+		#btn1{
+			height: 30px;
+			width:100px;
+			background-color: cyan;
+
+		}
+
+
+	</style>
+
+		<center><h1>Click the Button to Play Rock Paper Scissors</h1>
+				<h2>Top is Player 1</h2>
+				<h2>Bottom is Player 2</h2>
+				<button id="agnes">Click for Directions</button>
+				<br>
+
+		
+	<br>
+	<div id="coin"></div>
+	<br>
+	<br>
+	<button id="btn" class="btn btn-primary">Play</button>
+	<br>
+	<br>
+	<br>
+	<div id="coin1"></div>
+	<br>
+	<br>
+	<button id="btn1" class="btn btn-primary">Play</button>
+	<br>
+	<br>
+	
+	</center>
+	<script type="text/javascript">
+		
+
+		var voices;
+		getAllVoices = function(){
+			voices = speechSynthesis.getVoices()
+
+		}
+		
+		getAllVoices()
+
+		agnes.onclick = function(){
+			var msg = new SpeechSynthesisUtterance("Hello, this game is Rock, Paper, scissors. Press play under both squares to see who wins!");
+			voices = speechSynthesis.getVoices();
+			console.log(voices)
+			msg.voice = voices[0]
+			speechSynthesis.speak(msg)
+
+
+		}
+
+
+
+		var coin = document.querySelector("#coin");
+		btn.onclick = function(){
+
+			var side = Math.floor(Math.random()* 3 );
+			console.log(side);
+				if(side == 0){
+					coin.innerHTML = "Rock";
+				}
+				else if(side == 1){
+					coin.innerHTML = "Paper";
+				}
+				else
+					coin.innerHTML = "Scissor";
+				}
+
+
+		var coin1 = document.querySelector("#coin1");
+		btn1.onclick = function(){
+
+			var side1 = Math.floor(Math.random()* 3 );
+			console.log(side1);
+				if(side1 == 0){
+					coin1.innerHTML = "Rock";
+				}
+				else if(side1 == 1){
+					coin1.innerHTML = "Paper";
+				}
+				else
+					coin1.innerHTML = "Scissor";
+				}
+
+
+			
+		
+
+
+	</script>
+
+</body>
+</html>
