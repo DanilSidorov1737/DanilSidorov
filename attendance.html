@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+        <link href="/static/favicon.ico" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Attendance</title>
+        <style type="text/css">
+            nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+#info{
+    margin-left: 100px;
+    margin-top: 120px;
+    font-size: 30px;
+    border: 1px solid black;
+    display:inline-block;
+    padding: 7px;
+
+}
+#img{
+    float:right;
+    margin-top: 90px;
+    margin-right: 150px;
+    width: 300px;
+    height: 300px;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #f8f9fa;
+  color: grey;
+  
+
+}
+#how{
+    margin-left: 220px;
+    margin-top: 75px;
+    font-size: 18px;
+    border: 1px solid black;
+    padding: 20px;
+    color:blue;
+    margin-right: 200px;
+    padding-bottom: 290px;
+
+}
+#classroom{
+    float:right;
+    margin-right: 50px;
+    
+}
+
+
+
+
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="attendance.html"><span class="blue">Attendance</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="scanner.html">Scanner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="login.html">Log Out</a></li>
+                    </ul>
+               
+            </div>
+        </nav>  
+                
+
+        <div id="info">
+           
+           <b><p>Welcome to Attendance. This web-based program is designed <br> 
+              for teachers to make it easier to keep tracks of their students. <br>
+              This program can keep track of when students enter and exit the school <br>
+              go to the bathroom, or leave to another teachers class. This program <br>
+              was designed by Danil Sidorov. Thank you for using this program today.</p></b> 
+
+        </div>
+
+        <div id="img">
+            <img src="https://qrcode.azurewebsites.net/default.aspx?QRCodeControl1=Show&ImageFormat=Png&ErrorCorrectionLevel=H&CharacterEncoding=UTF_8&Text=Hello%2C+I+am+a+QR-Code!&Size=320&QuietZoneSize=1&BackColor=White&DatabitColor=Black&DatabitColoring=FixedColor&DatabitShape=Block&PositionerRotationAngle=_0Degrees&PositionerTopLeftInnerColor=Black&PositionerTopLeftOuterColor=Black&PositionerTopRightInnerColor=Black&PositionerTopRightOuterColor=Black&PositionerBottomLeftInnerColor=Black&PositionerBottomLeftOuterColor=Black&OverlayImageScaling=1&OverlayImageXOffset=0&OverlayImageYOffset=0&OverlayImageAlpha=100&OverlayTextFont=AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5Gb250BAAAAAROYW1lBFNpemUFU3R5bGUEVW5pdAEABAQLGFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQIAAAAbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AgAAAAIAAAAGAwAAABRNaWNyb3NvZnQgU2FucyBTZXJpZgAAQEEF/P///xhTeXN0ZW0uRHJhd2luZy5Gb250U3R5bGUBAAAAB3ZhbHVlX18ACAIAAAAAAAAABfv///8bU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AQAAAAd2YWx1ZV9fAAgCAAAAAwAAAAs=&OverlayTextColor=Black&OverlayTextXOffset=0&OverlayTextYOffset=0&OverlayTextAlpha=100">
+        </div>
+
+
+
+
+
+        
+        
+        <br>
+        <br>
+        <br>
+        <hr>
+
+         <div id="how">
+           
+           <b><p style="float:left;">This web-based program is very simple to set up and use. To start of <br>
+                 have the students enter their information at the registration tab and<br>
+                 print or take a picture of the QR code. Then go to the scanner page <br>
+                 and have the students put the QR code up to the camera, and after it <br>
+                 scans it make sure they put the location, and if they are checking in or <br>
+                 out and then just click, scan to save the information, which you can access <br>
+                 on the History tab.</p></b> 
+
+                 <img id="classroom" src="https://pbs.twimg.com/profile_images/378800000119265966/5060fb1c91d590cff8a8f7aa9fcc6c81.jpeg">
+
+        </div>
+
+
+        
+       
+
+
+        
+
+        <main class="container p-5">
+            
+        </main>
+
+      <footer>
+  <p>Author: Danil Sidorov<br>
+  <a href="Dannyboy1737@gmail.com">Dannyboy1737@gmail.com</a></p>
+</footer>
+
+    </body>
+
+</html>

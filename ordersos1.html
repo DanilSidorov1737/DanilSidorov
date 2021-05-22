@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Orders</title>
+        <style type="text/css">
+            nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+#table{
+    text-align: center;
+
+}
+#search{
+   width:500px;
+   display:inline-block;
+   margin-right: 10px;
+
+
+}
+
+#clearcart{
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+
+
+
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+       <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="ordersos.html"><span class="blue">Orders</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="homeos.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="storeos.html">Store</a></li>
+                       
+
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto mt-2">
+
+    <form id="form" action="homeos.html" method="post">
+
+        <div class="form-group" >
+
+            <input id="search" autocomplete="off" autofocus class="form-control" name="searchbar" placeholder="Search" type="text"> <button id="searchbutton" class="btn btn-primary" type="submit">Search</button> 
+
+        </div>
+
+      
+
+       
+    </form>
+                        <li class="nav-item"><a class="nav-link" href="loginos.html">Log Out</a></li>
+                    </ul>
+               
+            </div>
+        </nav>  
+                
+
+        
+
+
+    <center><table class="table table-striped" id="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Order</th>
+                <th>Address</th>
+                <th>Date</th>
+                
+
+            </tr>
+        </thead>
+
+        <tbody>
+            
+                <tr>
+                    <td><span id="data"></span></td>
+                    <td><span id="data1"></span></td>
+                    <td><span id="data2"></span></td>
+                    <td><span id="data3"></span></td>
+                </tr>
+                <tr>
+                    <td><span id="data4"></span></td>
+                    <td><span id="data5"></span></td>
+                    <td><span id="data6"></span></td>
+                    <td><span id="data7"></span></td>
+                </tr>
+                <tr>
+                    <td><span id="data8"></span></td>
+                    <td><span id="data9"></span></td>
+                    <td><span id="data10"></span></td>
+                    <td><span id="data11"></span></td>
+                </tr>
+                <tr>
+                    <td><span id="data12"></span></td>
+                    <td><span id="data13"></span></td>
+                    <td><span id="data14"></span></td>
+                    <td><span id="data15"></span></td>
+                </tr>
+
+                
+            
+        </tbody>
+    </table>
+</center>
+
+
+
+
+
+        <button id="clearcart" >Clear Cart</button>
+
+
+        <main class="container p-5">
+            
+        </main>
+
+
+        <script type="text/javascript">
+
+            clearcart.onclick = function(){
+                localStorage.clear()
+
+                document.getElementById("data").innerHTML = " "
+                document.getElementById("data1").innerHTML = " "
+                document.getElementById("data2").innerHTML = " "
+                document.getElementById("data3").innerHTML = " "
+
+                document.getElementById("data4").innerHTML = " "
+                document.getElementById("data5").innerHTML = " "
+                document.getElementById("data6").innerHTML = " "
+                document.getElementById("data7").innerHTML = " "
+
+                document.getElementById("data8").innerHTML = " "
+                document.getElementById("data9").innerHTML = " "
+                document.getElementById("data10").innerHTML = " "
+                document.getElementById("data11").innerHTML = " "
+
+                document.getElementById("data12").innerHTML = " "
+                document.getElementById("data13").innerHTML = " "
+                document.getElementById("data14").innerHTML = " "
+                document.getElementById("data15").innerHTML = " "
+
+                window.location.href='storeos.html'
+
+            }
+
+            
+            
+
+document.getElementById("data1").innerHTML=window.localStorage.getItem('order')
+
+
+document.getElementById("data5").innerHTML=window.localStorage.getItem('order1')
+document.getElementById("data9").innerHTML=window.localStorage.getItem('order2')
+document.getElementById("data13").innerHTML=window.localStorage.getItem('order3')
+
+
+
+
+function checkorder1(){
+    if(window.localStorage.getItem('order') == ""){
+
+    	document.getElementById("data").innerHTML  = "1"
+    	document.getElementById("data2").innerHTML = "2"
+        document.getElementById("data3").innerHTML = "3"
+
+    }
+    else{
+    	document.getElementById('data').innerHTML=window.localStorage.getItem('name')
+ 		document.getElementById('data2').innerHTML=window.localStorage.getItem('address')
+    	document.getElementById('data3').innerHTML=window.localStorage.getItem('dateorder')
+
+        
+    }
+};
+
+checkorder1()
+
+
+
+
+
+function checkorder2(){
+    if(document.getElementById("data5").innerHTML == ""){
+    	document.getElementById("data4").innerHTML == " "
+    	document.getElementById("data6").innerHTML == " "
+        document.getElementById("data7").innerHTML == " "
+
+    }
+    else{
+    
+    	document.getElementById('data4').innerHTML=window.localStorage.getItem('name')
+    	document.getElementById('data6').innerHTML=window.localStorage.getItem('address')
+    	document.getElementById('data7').innerHTML=window.localStorage.getItem('dateorder')
+        
+    }
+};
+
+checkorder2()
+
+function checkorder3(){
+    if(document.getElementById("data9").innerHTML == ""){
+    	document.getElementById("data8").innerHTML == " "
+    	document.getElementById("data10").innerHTML == " "
+        document.getElementById("data11").innerHTML == " "
+
+    }
+    else{
+    
+    	document.getElementById('data8').innerHTML=window.localStorage.getItem('name')
+    	document.getElementById('data10').innerHTML=window.localStorage.getItem('address')
+    	document.getElementById('data11').innerHTML=window.localStorage.getItem('dateorder')
+
+
+        
+    }
+};
+
+checkorder3()
+
+function checkorder4(){
+    if(document.getElementById("data13").innerHTML == ""){
+    	document.getElementById("data12").innerHTML == " "
+    	document.getElementById("data14").innerHTML == " "
+        document.getElementById("data15").innerHTML == " "
+
+    }
+    else{
+    
+    	
+    	document.getElementById('data12').innerHTML=window.localStorage.getItem('name')
+    	document.getElementById('data15').innerHTML=window.localStorage.getItem('dateorder')
+		document.getElementById('data14').innerHTML=window.localStorage.getItem('address')
+
+        
+    }
+};
+
+checkorder4()
+
+
+		
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+      
+
+    </body>
+
+</html>

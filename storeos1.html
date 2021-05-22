@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Store</title>
+        <style type="text/css">
+            nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+
+#title{
+    font-size: 100px;
+    display: inline-block;
+    
+
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #f8f9fa;
+  color: grey;
+  
+
+}
+#content{
+    
+    font-size: 18px;
+    border: 1px solid black;
+    padding: 100px;
+    color:black;
+    margin-left: 100px;
+    margin-right: 100px;
+   
+
+}
+#form{
+    
+    width:500px;
+    padding:15px;
+}
+
+#pencil{
+	width:100px;
+	height:100px;
+	border: 1px solid black;
+	float: left;
+	margin-right: 20px;
+	
+}
+#content{
+	font-size: 30px;
+	
+}
+
+
+
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+#opencart{
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#cartitems,#cartitems1,#cartitems2,#cartitems3,#cartitems4,#cartitems5,#cartitems6{
+  font-size: 15px;
+  
+}
+
+#date{
+  margin-left: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="storeos.html"><span class="blue">Store</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="homeos.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ordersos.html">Orders</a></li>
+                        
+
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="loginos.html">Log Out</a></li>
+                    </ul>
+               
+            </div>
+        </nav>  
+                
+
+        
+           
+           
+
+           
+        
+        
+
+
+<center>
+
+    <b><p id="title" >Online Store</p></b>
+
+    <form id="form" action="storeos.html" method="post">
+
+      
+
+        <div class="form-group">
+            <input id="search" autocomplete="off" autofocus class="form-control" name="searchbar" placeholder="Search" type="text"> 
+        </div>
+        <button id="login" class="btn btn-primary" type="submit">Search</button>
+
+    </form>
+
+</center>
+
+
+
+      
+<button id="opencart" onclick="openForm()">Open Cart</button>
+
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <h1 id="carttitle">Cart</h1> <p id="datetext" name="date"></p> <button id="dateorderbutton" type="button" onclick="dateoforder1()">Save The Date</button>
+    <br>
+    <br>
+    
+    <p id="cartitems"></p>
+    <p id="cartitems1"></p>
+    <p id="cartitems2"></p>
+    <p id="cartitems3"></p>
+    <p id="cartitems4"></p>
+    <p id="cartitems5"></p>
+    <p id="cartitems6"></p>
+
+  
+    
+
+    <label ><b>Name</b></label> <button id="nameorderbutton" type="button" onclick="nameoforder1()">Save</button>
+    <input type="text" placeholder="Enter Name"  id="nametext" required>
+
+    <label ><b>Address</b></label> <button id="addressorderbutton" type="button" onclick="addressoforder1()">Save</button>
+    <input type="text" placeholder="Enter Address"  id="addresstext" required>
+  
+
+    
+
+
+    <button  id="placeorder" type="button" class="btn" onclick="" >Place Order</button> 
+    <button type="submit" class="btn cancel" onclick="closeForm()">Close Cart</button>
+  </form>
+</div>
+
+
+        
+        
+        <br>
+        <br>
+        <br>
+        <hr>
+
+         <div id="content">
+
+
+
+            <div id="pencils"> 
+
+              <img src="https://weareticonderoga.com/wp-content/uploads/2019/06/13308_GLAMOUR_2000X2000.png" id="pencil">
+
+            	 <p id="pencilinfo">Ticonderoga Pencil. 10 in a pack - $5.00</p>
+            	
+
+            	<button id="pencilbutton" class="btn btn-primary" type="submit" onclick="addToCart()">Add To Cart</button>
+
+          </div>
+        <hr>
+        <div id="notebook"> <img src="https://www.national5and10.com/wp-content/uploads/2019/01/University-of-Delaware-1-Subject-Notebook-with-Pockets-1.jpg" id="pencil">
+
+            	
+            	<p id="notebookinfo">College Ruled Notebook. 1 per order - $5.00</p> 
+
+            	<button id="notebookbutton" class="btn btn-primary" type="submit" onclick="addToCart1()">Add To Cart</button>
+
+
+
+          </div>
+        <hr>
+        <div id="car"> <img src="https://images.financialexpress.com/2018/11/ROLLS_ROYCE_1.jpg?w=800&h=533&imflag=true" id="pencil">
+
+            	
+            	<p id="rollsinfo">Rolls Royce Phantom. 1 Per Order - $500,000</p> 
+
+            	<button id="rollsbutton" class="btn btn-primary" type="submit" onclick="addToCart2()">Add To Cart</button>
+
+          </div>
+        <hr>
+        <div id="crayons"> <img src="https://images-na.ssl-images-amazon.com/images/I/71ip3hk7gAL._AC_SL1500_.jpg" id="pencil">
+
+            	
+            	<p id="crayonsinfo">Crayons x96. 1 Pack Per Order - $20</p> 
+
+            	<button id="crayonsbutton" class="btn btn-primary" type="submit" onclick="addToCart3()">Add To Cart</button>
+
+          </div>
+        <hr>
+        <div id="dog"> <img src="https://better-bred-cdn.azureedge.net/wp-content/uploads/2020/04/AdobeStock_254534359.jpeg" id="pencil">
+
+            	
+            	<p id="doginfo">Borzoi. 1 Dog Per Order - $1,000</p> 
+
+            	<button id="dogbutton" class="btn btn-primary" type="submit" onclick="addToCart4()">Add To Cart</button>
+
+          </div>
+        <hr>
+        <div id="house"> <img src="https://www.phillymag.com/wp-content/uploads/sites/3/2019/01/condo-for-sale-waterfront-square-3rd-floor-unit-main-living-area.jpg" id="pencil">
+
+            	
+            	<p id="houseinfo">Condo. 1 Condo Per Order - $133,000</p> 
+
+            	<button id="housebutton" class="btn btn-primary" type="submit" onclick="addToCart5()">Add To Cart</button>
+
+          </div>
+        <hr>
+        <div id="morestuff"> <img src="https://img1.wsimg.com/isteam/ip/643ea9c5-405a-49f4-9e0b-4aa7c13ebdfc/Dots%201.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=h:500,cg:true/rs=w:768" id="pencil">
+
+            	
+            	<p id="moreitems">Click. Click for More Items</p> 
+
+            	<button id="moreitemsbutton" class="btn btn-primary" type="submit">...</button>
+
+          </div>
+          <hr>
+
+         
+
+        </div>
+
+        
+
+        <main class="container p-5">
+            
+        </main>
+
+      <footer>
+  <p>Author: Danil Sidorov<br>
+  <a href="Dannyboy1737@gmail.com">Dannyboy1737@gmail.com</a></p>
+</footer>
+
+
+<script type="text/javascript">
+
+// var num = 0
+
+    function openForm() {
+  var x = document.getElementById("myForm");
+  if (x.style.display = "none") {
+    x.style.display = "block";
+  } 
+}
+
+function closeForm() {
+  var x = document.getElementById("myForm");
+  if (x.style.display = "block") {
+    x.style.display = "none";
+  }
+
+}
+
+
+var pencilorder = document.getElementById('pencilinfo').innerHTML
+var notebookorder = document.getElementById('notebookinfo').innerHTML
+var rollsorder = document.getElementById('rollsinfo').innerHTML
+var crayonsorder = document.getElementById('crayonsinfo').innerHTML
+var dogorder = document.getElementById('doginfo').innerHTML
+var houseorder = document.getElementById('houseinfo').innerHTML
+
+
+placeorder.onclick = function(){
+    window.location.href='ordersos.html'
+    window.localStorage.setItem('order', pencilorder)
+    window.localStorage.setItem('order1', notebookorder)  
+    window.localStorage.setItem('order2', rollsorder)
+    window.localStorage.setItem('order3', crayonsorder)
+    window.localStorage.setItem('order4', dogorder)
+    window.localStorage.setItem('order5', houseorder)
+
+
+
+
+}
+  
+
+function addToCart(){
+
+  
+  document.getElementById("cartitems").innerHTML=pencilorder
+
+}
+
+function addToCart1(){
+  
+  
+
+   document.getElementById("cartitems1").innerHTML=notebookorder
+}
+
+function addToCart2(){
+
+   document.getElementById("cartitems2").innerHTML=rollsorder
+}
+
+function addToCart3(){
+  
+
+   document.getElementById("cartitems3").innerHTML=crayonsorder
+
+}
+
+function addToCart4(){
+  
+
+   document.getElementById("cartitems4").innerHTML=dogorder
+
+}
+
+function addToCart5(){
+  
+
+   document.getElementById("cartitems5").innerHTML=houseorder
+
+}
+
+
+
+
+function nameoforder1(){
+  window.localStorage['name'] = document.getElementById('nametext').value;
+}
+
+
+function addressoforder1(){
+  window.localStorage['address'] = document.getElementById('addresstext').value;
+
+
+}
+
+
+function dateoforder1(){
+  var today = new Date();
+  var date2 = (today.getMonth()+1)+'-'+today.getDate();
+  document.getElementById("datetext").innerHTML = date2;
+  window.localStorage.setItem("dateorder", date2)
+
+  document.getElementById('datetext').innerHTML = window.localStorage.getItem('dateorder')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var item = order + num
+
+
+</script>
+
+    </body>
+
+</html>
+
+
